@@ -16,8 +16,6 @@ namespace hashCodePractice
             var mainClass = new MainClass();
             mainClass.Run();
         }
-
-       
     }
 
     internal class MainClass
