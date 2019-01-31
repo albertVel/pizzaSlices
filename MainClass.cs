@@ -1,23 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace hashCodePractice
+namespace PizzaSlices
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-
-            var mainClass = new MainClass();
-            mainClass.Run();
-        }
-    }
-
     internal class MainClass
     {
         private PizzaReqs pizzaReqs;
@@ -33,9 +18,11 @@ namespace hashCodePractice
 
                 ProcessIngredients(reader);
 
-                int[,] slices= new int[1000,1000];
+                int[,] slices = new int[1000, 1000];
 
-                if (DoPizza(pizzaReqs,slices))
+                //InitializeSlices();
+
+                if (DoPizza(slices))
                 {
                 }
                 else
@@ -45,9 +32,12 @@ namespace hashCodePractice
             }
         }
 
-        private bool DoPizza(PizzaReqs pizzaReqs, int [,] slices)
+
+        private bool DoPizza(int[,] slices)
         {
             //slices in the form of r1, c1, r2, c2
+
+
 
             //L (1 ≤ L ≤ 1000) is the minimum number of each ingredient cells in a slice,
             //H(1 ≤ H ≤ 1000) is the maximum total number of cells of a slice
@@ -62,10 +52,10 @@ namespace hashCodePractice
 
             for (var i = 0; i < pizzaReqs.numberRows; i++)
             {
-                var line=reader.ReadLine();
+                var line = reader.ReadLine();
                 for (var j = 0; i < pizzaReqs.numberColumns; i++)
                 {
-                    pizzaReqs.ingredients[i,j]= line.ElementAt(j);
+                    pizzaReqs.ingredients[i, j] = line.ElementAt(j);
                 }
             }
         }
@@ -83,13 +73,6 @@ namespace hashCodePractice
 
         }
     }
-
-    internal class PizzaReqs
-    {
-        public int numberRows;
-        public int numberColumns;
-        public int minNumberIngredients;
-        public int maxNumberCellsPerSlice;
-        public char[,] ingredients;
-    }
 }
+
+
