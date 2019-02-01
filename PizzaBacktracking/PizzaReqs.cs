@@ -4,7 +4,7 @@
     {
         public int numberRows;
         public int numberColumns;
-        public int minNumberIngredients;
+        public int minEachIngredient;
         public int maxNumberCellsPerSlice;
         public char[,] ingredients;
     }
