@@ -1,6 +1,6 @@
 ﻿namespace PizzaSlices
 {
-    internal class PizzaReqs
+    public class PizzaReqs
     {
         public int numberRows;
         public int numberColumns;
